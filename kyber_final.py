@@ -143,10 +143,10 @@ def encriptMain():
     
 def KyberKem():
     pk,sk = KEM_KeyGen()
-    ct,m = KEM_Encrypt(pk)
-    ss = KEM_Decrypt(sk, ct)
+    ct,ss = KEM_Encrypt(pk)
+    ss_1 = KEM_Decrypt(sk, ct)
 
-    if np.polynomial.Polynomial(ss[0]) == np.polynomial.Polynomial(m[0][0]):
+    if np.polynomial.Polynomial(ss_1[0]) == np.polynomial.Polynomial(ss[0][0]):
         return True
 
 if __name__ == "__main__":
